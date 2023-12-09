@@ -89,44 +89,81 @@ var startScreen = document.querySelector("#start-screen");
 var quesation = document.querySelector("#questions");
 var questionTitle = document.querySelector("#question-title");
 var choices = document.querySelector("#choices");
+var time = document.querySelector(".time");
+var timer = document.querySelector("#timer");
 
 // Create a code quiz that contains the following requirements:
 
 // A start button that when clicked a timer starts and the first question appears.
-
+var i = 0;
 function startQuiz() {
   console.log("quiz started");
-  console.log();
+//   setTime()
 
   // Access the first question and appent a H1 (section title) h2(quesation) and list of button with anwers
-  for (let i = 0; i < myQuestions.length; i++) {
-    //    Adding Question to the Html
-    startScreen.textContent = "";
-    var firstQuestionString = myQuestions[i].question;
-    questionTitle.textContent = firstQuestionString;
+  // Adding Question to the Html
+  startScreen.textContent = "";
+  var firstQuestionString = myQuestions[i].question;
+  questionTitle.textContent = firstQuestionString;
 
-    //    Adding Anwsers to the Html
-    for (var key in myQuestions[i].answers) {
-    //   console.log(`${key}: ${myQuestions[i].answers[key]}`);
-      var answerText = myQuestions[i].answers[key];
-      var answerButton = document.createElement("button");
-      // Setting Atribute of the answers
-      answerButton.setAttribute("data-choice", key);
+  // Adding Anwsers to the HTML
+  for (var key in myQuestions[i].answers) {
+    var answerLetter = key
+    console.log(answerLetter);
+    // var answerLetterSpan = document.createElement('span');
 
-      answerButton.textContent = answerText;
-      choices.appendChild(answerButton);
+    var answerText = myQuestions[i].answers[key];
+    var answerButton = document.createElement("button");
+
+    // Setting Atribute of the answers and answer letter 
+    // answerLetterSpan.textContent = answerLetter;
+    // choices.append(answerLetterSpan);
+
+    answerButton.setAttribute("data-choice", key);
+    answerButton.setAttribute("class", "btn");
+    answerButton.textContent = `${answerLetter}:   ${answerText}` ;
+    choices.appendChild(answerButton);
+
+    if (myQuestions.indexOf(myQuestions[i]) === myQuestions.length - 1) {
+      console.log(`you reached the end`);
+      questionTitle.textContent = "Well Done You Reached the end";
+      var buttons = Array.from(document.querySelectorAll(".btn"));
+      buttons.forEach((element) => {
+        element.remove();
+      });
+    } else {
+      answerButton.addEventListener("click", function (e) {
+        e.stopPropagation();
+        e.preventDefault();
+        var atribute = e.target.getAttribute("data-choice");
+        if (myQuestions[i].correctAnswer !== atribute) {
+        } else {
+          console.log(`WELL DONE!`);
+          var buttons = Array.from(document.querySelectorAll(".btn"));
+          buttons.forEach((element) => {
+            element.remove();
+          });
+          i++;
+          startQuiz();
+        }
+      });
     }
-    answerButton.addEventListener("click", function (event) {
-      event.stopPropagation();
-      event.preventDefault();
-      var atribute = event.target.getAttribute("data-choice");
-      console.log(atribute);
-      if (myQuestions[i].correctAnswer !== atribute) {
-      } else {
-        console.log(`WELL DONE!`);
-      }
-    });
   }
+}
+var secondsLeft = 120;
+function setTime() {
+  // Sets interval in variable
+  var timerInterval = setInterval(function () {
+    secondsLeft--;
+    time.textContent = secondsLeft + " seconds left till colorsplosion.";
+
+    if (secondsLeft === 0) {
+      // Stops execution of action at set interval
+      clearInterval(timerInterval);
+      // Calls function to create and append image
+      sendMessage();
+    }
+  }, 1000);
 }
 
 startButton.addEventListener("click", function (event) {
