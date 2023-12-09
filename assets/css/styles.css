@@ -1,7 +1,7 @@
 :root {
   --primary-color:#2e0073;
   --secondary-color:#b3fe03;
-  --secondary-hover-color:#cee891;
+  --secondary-hover-color:#eeff00;
 }
 
 body {
@@ -20,6 +20,8 @@ header {
 
 .scores a,.timer  {
   color: var(--secondary-color);
+  font-size: 2rem;
+  position: relative;
  }
  
 a {
@@ -28,7 +30,22 @@ a {
 }
 
 a:hover {
-  color: var(--secondary-hover-color)
+  color: var(--secondary-hover-color);
+}
+
+a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  width: 10%;
+  background-color: white;
+  transition: width 0.3s ease-in-out;
+}
+
+a:hover::after {
+  width: 100%;
 }
 
 button {
@@ -105,6 +122,7 @@ li:nth-child(odd) {
   display: flex;
   justify-content: center;
   flex-direction: column;
+  text-align: center;
 }
 
 .btn {
