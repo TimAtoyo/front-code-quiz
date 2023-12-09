@@ -89,7 +89,7 @@ var startScreen = document.querySelector("#start-screen");
 var quesation = document.querySelector("#questions");
 var questionTitle = document.querySelector("#question-title");
 var choices = document.querySelector("#choices");
-var time = document.querySelector(".time");
+var time = document.querySelector("#time");
 var timer = document.querySelector("#timer");
 
 // Create a code quiz that contains the following requirements:
@@ -98,7 +98,7 @@ var timer = document.querySelector("#timer");
 var i = 0;
 function startQuiz() {
   console.log("quiz started");
-//   setTime()
+  setTime()
 
   // Access the first question and appent a H1 (section title) h2(quesation) and list of button with anwers
   // Adding Question to the Html
@@ -137,6 +137,7 @@ function startQuiz() {
         e.preventDefault();
         var atribute = e.target.getAttribute("data-choice");
         if (myQuestions[i].correctAnswer !== atribute) {
+            secondsLeft - 10
         } else {
           console.log(`WELL DONE!`);
           var buttons = Array.from(document.querySelectorAll(".btn"));
@@ -155,13 +156,13 @@ function setTime() {
   // Sets interval in variable
   var timerInterval = setInterval(function () {
     secondsLeft--;
-    time.textContent = secondsLeft + " seconds left till colorsplosion.";
+    time.textContent = `${secondsLeft}s`;
 
     if (secondsLeft === 0) {
       // Stops execution of action at set interval
       clearInterval(timerInterval);
       // Calls function to create and append image
-      sendMessage();
+    //   sendMessage();
     }
   }, 1000);
 }
