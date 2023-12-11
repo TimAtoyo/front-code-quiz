@@ -12,6 +12,8 @@ body {
 }
 
 header {
+  font-family: 'Silkscreen', sans-serif;
+  /* font-weight: 700; */
   display: flex;
   padding: 2rem 3rem;
   justify-content: space-between;
@@ -131,6 +133,7 @@ li:nth-child(odd) {
 }
 
 #question-title {
- font-weight: 700;
+  font-family: 'Silkscreen', sans-serif;
+ font-weight: 400;
  margin-top: 0;
 }

@@ -95,81 +95,117 @@ var timer = document.querySelector("#timer");
 // Create a code quiz that contains the following requirements:
 
 // A start button that when clicked a timer starts and the first question appears.
+
+
+
+
+
+// function startQuiz() {
+//   startScreen.textContent = "";
+//   console.log("quiz started");
+//   // Timmer function call
+//   setTime();
+
+//   // Access the first question and appent a H1 (section title) h2(quesation) and list of button with anwers
+//   // Adding Question to the Html
+
+//   var questionString = myQuestions[i].question;
+//   questionTitle.textContent = questionString;
+
+//   // Adding Anwsers to the HTML
+//   for (var key in myQuestions[i].answers) {
+//     // console.log(answerChoiceLetter);
+//     // var answerChoiceLetterSpan = document.createElement('span');
+
+//     var answerChoiceLetter = key;
+//     var answerText = myQuestions[i].answers[key];
+//     var answerButton = document.createElement("button");
+
+//     answerButton.setAttribute("data-choice", key);
+//     answerButton.setAttribute("class", "btn");
+
+//     answerButton.textContent = `${answerChoiceLetter}:   ${answerText}`;
+
+//     choices.appendChild(answerButton);
+//     var endOfQuestions =
+//       myQuestions.indexOf(myQuestions[i]) === myQuestions.length -1;
+//     if (!endOfQuestions) {
+//       answerButton.addEventListener("click", function (e) {
+//         e.stopPropagation();
+//         e.preventDefault();
+
+//         var atribute = e.target.getAttribute("data-choice");
+//         var isCorrectAnswer = myQuestions[i].correctAnswer === atribute;
+//         if (isCorrectAnswer) {
+//           console.log(`WELL DONE!`);
+//           var buttons = Array.from(document.querySelectorAll(".btn"));
+//           buttons.forEach((element) => {
+//             element.remove();
+//           });
+//           i++;
+//           startQuiz();
+//         } else {
+//           secondsLeft = secondsLeft - 10;
+//           console.log(secondsLeft);
+//           //   if (secondsLeft < 10) {
+//           //     secondsLeft = 0;
+//           //   } else {
+//           //     secondsLeft = secondsLeft - 10;
+//           //   }
+//           // time.textContent = `${wrongAnswerTimePenalty}s`;
+//         }
+//       });
+//     } else {
+//       console.log(`you reached the end`);
+//       var buttons = Array.from(document.querySelectorAll(".btn"));
+//       clearInterval(timerInterval);
+
+//       questionTitle.textContent = "Well Done You Reached the end";
+
+//       buttons.forEach((element) => {
+//         element.remove();
+//       });
+//     }
+//   }
+// }
+// var secondsLeft = 200;
+// function setTime(event) {
+//   // Sets interval in variable
+//   var timerInterval = setInterval(function () {
+//     secondsLeft--;
+//     time.textContent = `${secondsLeft}s`;
+
+//     if (secondsLeft <= 0) {
+//       // Stops execution of action at set interval
+//       clearInterval(timerInterval);
+//       // Calls function to create and append image
+//       //   sendMessage();
+//     }
+//   }, 1000);
+// }
+
+// startButton.addEventListener("click", setTime);
+
 var i = 0;
-function startQuiz() {
-  console.log("quiz started");
-  setTime()
 
-  // Access the first question and appent a H1 (section title) h2(quesation) and list of button with anwers
-  // Adding Question to the Html
-  startScreen.textContent = "";
-  var firstQuestionString = myQuestions[i].question;
-  questionTitle.textContent = firstQuestionString;
+startButton.addEventListener("click", function (e) {
+  e.preventDefault();
 
-  // Adding Anwsers to the HTML
-  for (var key in myQuestions[i].answers) {
-    var answerLetter = key
-    console.log(answerLetter);
-    // var answerLetterSpan = document.createElement('span');
+  startScreen.classList.toggle('hide');
+  var question = myQuestions[i].question;
+  questionTitle.innerHTML = question;
 
-    var answerText = myQuestions[i].answers[key];
-    var answerButton = document.createElement("button");
+ 
+    var answersList = myQuestions[i].answers;
+    Object.entries(answersList).forEach(([key, value]) => {
+      console.log(`${key}: ${value}`)
+      var answerButton = document.createElement('button');
+      answerButton.textContent = `${key}: ${value}`;
+      choices.append(answerButton);
+      
+  });
 
-    // Setting Atribute of the answers and answer letter 
-    // answerLetterSpan.textContent = answerLetter;
-    // choices.append(answerLetterSpan);
 
-    answerButton.setAttribute("data-choice", key);
-    answerButton.setAttribute("class", "btn");
-    answerButton.textContent = `${answerLetter}:   ${answerText}` ;
-    choices.appendChild(answerButton);
-
-    if (myQuestions.indexOf(myQuestions[i]) === myQuestions.length - 1) {
-      console.log(`you reached the end`);
-      questionTitle.textContent = "Well Done You Reached the end";
-      var buttons = Array.from(document.querySelectorAll(".btn"));
-      buttons.forEach((element) => {
-        element.remove();
-      });
-    } else {
-      answerButton.addEventListener("click", function (e) {
-        e.stopPropagation();
-        e.preventDefault();
-        var atribute = e.target.getAttribute("data-choice");
-        if (myQuestions[i].correctAnswer !== atribute) {
-            secondsLeft - 10
-        } else {
-          console.log(`WELL DONE!`);
-          var buttons = Array.from(document.querySelectorAll(".btn"));
-          buttons.forEach((element) => {
-            element.remove();
-          });
-          i++;
-          startQuiz();
-        }
-      });
-    }
-  }
-}
-var secondsLeft = 120;
-function setTime() {
-  // Sets interval in variable
-  var timerInterval = setInterval(function () {
-    secondsLeft--;
-    time.textContent = `${secondsLeft}s`;
-
-    if (secondsLeft === 0) {
-      // Stops execution of action at set interval
-      clearInterval(timerInterval);
-      // Calls function to create and append image
-    //   sendMessage();
-    }
-  }, 1000);
-}
-
-startButton.addEventListener("click", function (event) {
-  event.preventDefault();
-  startQuiz();
 });
 
 console.log(startButton);
