@@ -21,11 +21,25 @@ header {
 }
 
 .scores a,.timer  {
+  
   color: var(--secondary-color);
   font-size: 2rem;
   position: relative;
  }
  
+ .current-score,.score {
+  text-transform: uppercase;
+  font-family: 'Silkscreen', sans-serif;
+  text-align: center;
+  color: var(--primary-color);
+  font-size: 2rem;
+  position: relative;
+ }
+
+ .current-score {
+  background-color: var(--secondary-color);
+ }
+
 a {
   text-decoration: none;
   transition: color 0.1s;
