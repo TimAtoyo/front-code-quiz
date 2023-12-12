@@ -1,89 +1,94 @@
-# Module 6 Challenge Web APIs: Code Quiz
+# Code Quiz App
 
-## Your Task
+## Overview
 
-As you proceed in your journey to becoming a front-end web developer, it’s likely that you’ll be asked to complete a coding assessment, perhaps as part of an interview process. A typical coding assessment is a combination of multiple-choice questions and interactive coding challenges. 
+The Code Quiz App is a dynamic web application designed for users taking a front-end course. It features a quiz with questions in four main sections: HTML Basics, CSS Fundamentals, JavaScript Essentials, and Responsive Web Design.
 
-To help you become familiar with these tests and give you a chance to apply the skills from this module, this week’s challenge invites you to build a timed coding quiz with multiple-choice questions. This app will run in the browser, and will feature dynamically updated HTML and CSS powered by JavaScript code that you write. It will have a clean, polished, and responsive user interface. This week’s coursework has taught you all the skills you need to succeed in this challenge.
+## Features
+
+- **High-Stakes Timer:** The countdown timer starts at 200 seconds when the user begins the quiz. Incorrect answers deduct 10 seconds. The game ends when the timer reaches 0 or the user answers all the questions.
+
+- **Dynamic Feedback:** Instant feedback with both visual messages and interactive sound effects for correct and incorrect answers.
+
+- **Leaderboard Glory:** After the quiz, users enter their name, and their score is added to the leaderboard, sorted in descending order based on scores.
+
+- **Persistent Storage:** Local storage stores quiz questions (in `questions.js`) and leaderboard data.
+
+- **Clear Scores Inferno:** "Clear Scores" button clears the leaderboard by incinerating local storage and refreshing the browser.
+
+## Technology Stack
+
+- HTML
+- CSS
+- JavaScript
+- Web API
+
+## Installation and Usage
+
+Clone the repository and open `index.html` in your browser. The app is also hosted on [GitHub Pages](#github-pages).
+
+## GitHub Pages
+
+Access the app on [GitHub Pages](#github-pages).
+
+## Leaderboard Display
+
+The leaderboard is on a separate page (`highscores.html`), presented as a numbered list showing the highest scores first.
+
+## Testing
+
+User testing has been conducted, ensuring a seamless experience. Future testing and refactoring planned for code quality elevation.
+
+## Contributions
+
+Contributions are welcomed! Follow standard guidelines when submitting changes or improvements.
+
+## License
+
+This project is currently not licensed.
+
+## Next steps for Refactoring and Improvements
+
+### Refactoring:
+
+1. **Modularize Code:**
+   -  modularise the JavaScript code into separate functions.
+
+2. **Reuse Code:**
+   - Identify opportunities to reuse code snippets for better maintainability.
+
+3. **Improve CSS Structure:**
+   - Organize CSS styles in a more modular and scalable way.
+
+4. **Consistent Naming Conventions:**
+   - Ensure consistent naming conventions across your codebase.
+
+5. **Error Handling:**
+   - Implement robust error handling mechanisms.
+
+6. **Responsive Design:**
+   - Double-check and enhance the responsive design.
+
+7. **Code Comments:**
+   - Add comments to explain complex logic.
+
+### Additional Features:
+
+1. **User Authentication:**
+   - Personalize the leaderboard with user authentication.
+
+2. **Difficulty Levels:**
+   - Add difficulty levels for questions.
+
+3. **Interactive Quiz Summary:**
+   - Display a summary page at the end of the quiz.
+
+### Testing:
+
+1. **Automated Testing:**
+   - Implement automated testing using frameworks like Jest.
+
+2. **Accessibility Testing:**
+   - Conduct accessibility testing.
 
 
-## User Story
-
-```
-AS A coding boot camp student
-I WANT to take a timed quiz on JavaScript fundamentals that stores high scores
-SO THAT I can gauge my progress compared to my peers
-```
-
-## Acceptance Criteria
-
-Create a code quiz that contains the following requirements:
-
-* A start button that when clicked a timer starts and the first question appears.
- 
-  * Questions contain buttons for each answer.
-  * 
-  * When answer is clicked, the next question appears
-  * 
-  * If the answer clicked was incorrect then subtract time from the clock
-
-* The quiz should end when all questions are answered or the timer reaches 0.
-
-  * When the game ends, it should display their score and give the user the ability to save their initials and their score
-  
-## Mock-Up
-
-The following animation demonstrates the application functionality:
-
-![Animation of code quiz. Presses button to start quiz. Clicks the button for the answer to each question, displays if answer was correct or incorrect. Quiz finishes and displays high scores. User adds their intials, then clears their intials and starts over.](./assets/08-web-apis-challenge-demo.gif)
-
-## Grading Requirements
-
-This challenge is graded based on the following criteria: 
-
-### Technical Acceptance Criteria: 40%
-
-* Satisfies all of the above acceptance criteria.
-
-### Deployment: 32%
-
-* Application deployed at live URL.
-
-* Application loads with no errors.
-
-* Application GitHub URL submitted.
-
-* GitHub repository that contains application code.
-
-### Application Quality: 15%
-
-* Application user experience is intuitive and easy to navigate.
-
-* Application user interface style is clean and polished.
-
-* Application resembles the mock-up functionality provided in the challenge instructions.
-
-### Repository Quality: 13%
-
-* Repository has a unique name.
-
-* Repository follows best practices for file structure and naming conventions.
-
-* Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
-
-* Repository contains multiple descriptive commit messages.
-
-* Repository contains quality README file with description, screenshot, and link to deployed application.
-
-
-## Review
-
-You are required to submit BOTH of the following for review:
-
-* The URL of the functional, deployed application.
-
-* The URL of the GitHub repository. Give the repository a unique name and include a README describing the project.
-
----
-© 2023 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
-# front-code-quiz

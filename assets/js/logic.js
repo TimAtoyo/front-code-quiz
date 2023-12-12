@@ -79,7 +79,7 @@ var startQuiz = function () {
 
         quesation.append(answerFeedback);
 
-        sleep(10).then(() => {
+        sleep(500).then(() => {
           answerFeedback.remove();
           // Removes Buttons
           var buttons = document.querySelectorAll(".btn");
@@ -97,7 +97,7 @@ var startQuiz = function () {
         score = score + 1;
         quesation.append(answerFeedback);
 
-        sleep(10).then(() => {
+        sleep(500).then(() => {
           answerFeedback.remove();
           // Removes Buttons
           var buttons = document.querySelectorAll(".btn");

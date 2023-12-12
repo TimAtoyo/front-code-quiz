@@ -41,7 +41,7 @@ const myQuestions = [
     correctAnswer: "A",
   },
   {
-    SectionTitle: " CSS Fundamentals:",
+    SectionTitle: "CSS Fundamentals:",
     question:
       "How can you center an element horizontally and vertically in CSS?",
     answers: {
@@ -94,7 +94,7 @@ const myQuestions = [
     correctAnswer: "B",
   },
   {
-    SectionTitle: "JavaScript Essentials:",
+    SectionTitle: "Responsive Web Design:",
     question:
       "What is the purpose of the viewport meta tag in HTML?",
     answers: {
@@ -105,7 +105,7 @@ const myQuestions = [
     correctAnswer: "B",
   },
   {
-    SectionTitle: "JavaScript Essentials:",
+    SectionTitle: "Responsive Web Design:",
     question:
       "Explain the concept of a mobile-first approach in web design.",
     answers: {
