@@ -25,12 +25,20 @@ The Code Quiz App is a dynamic web application designed for users taking a front
 
 ## Installation and Usage
 
-Clone the repository and open `index.html` in your browser. The app is also hosted on [GitHub Pages](#github-pages).
+Clone the repository and open `index.html` in your browser. The app is also hosted on [GitHub Pages](https://timatoyo.github.io/front-code-quiz/).
 
 ## GitHub Pages
 
-Access the app on [GitHub Pages](#github-pages).
+Access the app on [GitHub Pages](https://timatoyo.github.io/front-code-quiz/).
+## GitHub Repo
 
+Access the app on [GitHub Repo](https://github.com/TimAtoyo/front-code-quiz).
+
+## Screen shot of App
+
+![App Screenshot](assets/img/App-HTML.png)
+
+![App Screenshot](/assets/img/App-HTML2.png)
 ## Leaderboard Display
 
 The leaderboard is on a separate page (`highscores.html`), presented as a numbered list showing the highest scores first.
